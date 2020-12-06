@@ -6,6 +6,7 @@ use App\Controller\FriendController;
 use App\Controller\ProfilController;
 use App\Controller\ResultController;
 use App\Controller\SondageController;
+use App\Controller\QuestionController;
 use App\Controller\NewFriendController;
 use App\Controller\newSondageController;
 use App\Controller\ProfilmodifController;
@@ -14,6 +15,10 @@ if (array_key_exists("page", $_GET)) {
     switch ($_GET["page"]) {
         case 'home':
             $controller = new HomeController();
+            $controller->render();
+        break;
+        case 'sondage':
+            $controller = new SondageController();
             $controller->render();
         break;
         case 'sign':
@@ -32,8 +37,8 @@ if (array_key_exists("page", $_GET)) {
             $controller = new newSondageController();
             $controller->render();
         break;
-        case 'sondage':
-            $controller = new SondageController();
+        case 'question';
+            $controller = new QuestionController();
             $controller->render();
         break;
         case 'friend':

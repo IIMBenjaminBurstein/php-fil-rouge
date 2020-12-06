@@ -18,7 +18,7 @@ class SignController{
             $msgCo = $this->model->connexion();
             require ROOT."/App/View/signView.php";
         }else{//sinon si connecté on redirige vers la page profil
-         header('location:index.php?page=profil');
+         header('location:index.php?page=home');
         }
     }
 }
