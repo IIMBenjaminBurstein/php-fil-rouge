@@ -4,7 +4,7 @@
     </div>
     <div>
         <a href="../public/index.php?page=home">
-        <img src="../Public/Asset/img/logo.png">
+        <img src="../public/Asset/img/logo.png">
         </a>
         </div>
     <div>
@@ -21,8 +21,6 @@
 
     </div>
     <?php
-   
-   
         if(isset($_GET['action']) && $_GET['action'] == 'deconnexion') {
         session_destroy();
         header('location:index.php?page=home');

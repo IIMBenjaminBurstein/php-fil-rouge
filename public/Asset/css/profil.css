@@ -1,16 +1,17 @@
 #profil section{
     width: 700px;
-    margin: 50px auto;
+    margin-left: 25%;
 }
 
 #profil img{
     width: 100%;
+    height: auto;
     border-radius: 15px 15px 0 0;
 }
 
 #profil .info{
     display: flex;
-    background-color: #D5E9EC;
+    background-color: #008d97a6;
     padding: 20px;
     border-radius: 0 0 15px 15px;
     font-size: 1.2em;
@@ -18,10 +19,12 @@
 }
 
 #profil .info p{
-    padding: 5px;
+    padding: 0px;
 }
 
-
+#profil.supp{
+    margin-bottom: 25%;
+}
 
 @media screen and (max-width:710px){
     #profil section{

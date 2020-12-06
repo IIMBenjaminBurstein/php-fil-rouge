@@ -31,10 +31,10 @@ include '../inc/header.inc.php';
                 <div>
                     <label for="email">Email :</label>
                     <input type="email" name="email" class="form-control" value="<?= $userdata->email ?>">
-                    <p style="margin-top: 10% ">Nombre d'amis : <?= $frienddata->nb_ami ?></p>
+                    <p class= "nbAmi">Nombre d'amis : <?= $frienddata->nb_ami ?></p>
                     <p>Nombre de mes sondages : <?= $sondagedata->nb_sond ?></p>
-                    <p style="margin-top: 6%;">Date d'inscription : <?= $userdata->date ?></p>
-                    <label style="margin-top: 1%;" for="mdp">Mdp actuel :</label>
+                    <p class="inscription">Date d'inscription : <?= $userdata->date ?></p>
+                    <label class="mdp" for="mdp">Mdp actuel :</label>
                     <input type="password" name="mdp" class="form-control" placeholder="veuillez remplir le champ"
                         required>
                 </div>
@@ -44,7 +44,7 @@ include '../inc/header.inc.php';
                 endforeach; 
                 ?>
             </div>
-            <input type="submit" class="btn btn-info btn-block active" value="Envoyez" name="bouton">
+            <button type="submit" class="btn btn-info btn-block active modif" value="Envoyez" name="bouton">Envoyer</button>
             <?php  
             if($message[0] == true){
                 echo $message[1];

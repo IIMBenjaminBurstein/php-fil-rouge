@@ -40,7 +40,7 @@ include '../inc/header.inc.php';
     </section>
     <!-- Bouton de suppression du compte -->
     <form method="POST">
-        <button type="submit" class="btn btn-info active" name="delete" style="float:right; margin-right:20px">Supprimer
+        <button type="submit" class="btn btn-info active supp" name="delete" style="float:right; margin-right:20px">Supprimer
             Mon Compte</button>
     </form>
 </main>

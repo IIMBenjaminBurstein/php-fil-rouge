@@ -1,76 +1,54 @@
-#accueil section{
-    margin: 50px 0;
-}
 
-.conteneur p {
-    text-align: center;
-    padding: 20px 20px 0px;
-    color: black;
-}
 
-.conteneur span{
-    display: block;
-    text-align: center;
-    background-color:  #106B7E;
-    color: white;
-    padding: 5px 10px;
-    font-size: 0.9em;
-    width: 100%;
-}
-
-.conteneur{
+/*main*/
+.container {
+	max-width: 90%;
+	margin: 0 auto;
+	padding: 25px;
+    background-color: white;
     display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    flex-flow: column;
+}
+main.home{
+    height: 62.6vh;
+}
+#animation{
+   height: 70%; 
+   margin-top: auto;    
+}
+#animation img{
+	-webkit-transition:-webkit-transform .9s; 
+  -moz-transition:-moz-transform .9s;       
+  -o-transition:-o-transform .9s;           
+  -ms-transition:-ms-transform .9s;        
+  transition:transform .9s;
 }
 
-.conteneur .boxsondage{
-    width: 400px;
-    background-color:#D5E9EC;
-    box-shadow: 0 3px 6px rgba(255, 255, 255, 0.418);
-    border-radius: 15px;
-    margin: 35px 20px;
+#animation img:hover{
+	-webkit-transform:rotateZ(360deg), rotateY(360deg); 
+	-moz-transform:rotateZ(360deg), rotateY(360deg); 
+	-o-transform:rotateZ(360deg), rotateY(360deg);  
+	-ms-transform:rotateZ(360deg), rotateY(360deg);  
+	transform:  rotateZ(114deg);
+
+}
+#animation a img {
+    margin: auto;
+    margin-top: 30px;
+    width: 20%;
 }
 
-.conteneur .boxsondage img{
-    border-radius: 15px 15px 0 0;
-    width: 100%;
+main.home{
+	display: flex;
+	text-align: center;
+	margin: 110px ;
 }
-
-.fa-share{
-    display: flex;
-    float: right;
-    font-size: 20px;
-    cursor: pointer;
-    color: #106B7E;
-    padding: 10px 20px 20px;
-}
-
-.fa-share:hover{
-    color: #7e1010;
-}
-
-.conteneur .boxsondage:hover{
-    box-shadow: none;
-    transition-duration: 0.2s;
-    transform: translate(0px, -10px);
-    transition-timing-function: linear;
-}
-
-.conteneur .boxsondage a:hover{
+a.home{
     text-decoration: none;
 }
-
-
-@media screen and (max-width:900px){
-    .conteneur .boxsondage{
-        width: 300px; 
-        margin-bottom: 0px;
-    }
-    
-    .conteneur .boxsondage img{
-        width: 300px;
-    }
-
+h2.home{
+	color: #008e97;
+}
+h2.home:hover{
+	color: #fa9702;
 }
