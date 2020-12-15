@@ -25,4 +25,6 @@
         <script  async defer src="Asset/js/main.js"> </script>
         <title>Sondage</title>
     </head>
-<body>
+    <?php if($_GET['page'] != 'sign'){ ?>
+            <body>
+   <?php } ?>

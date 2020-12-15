@@ -54,9 +54,9 @@ class QuestionModel extends Database {
           $addAnswer->execute();  
           $countAnswer= $this->pdo->prepare("UPDATE ANSWER SET nombre = nombre+1 WHERE answer_id = '$idAnswer' ");
           $countAnswer->execute();
-          header('location:index.php?page=sondage&sondage='.$sondage_id); 
+          header('location:index.php?page=question&sondage='.$sondage_id); 
         }else{
-        header('location:index.php?page=sondage&sondage='.$sondage_id); 
+        header('location:index.php?page=question&sondage='.$sondage_id); 
         }
       
       }//verifion que nous ne retournons auccune ligne, si c'est le cas l'utilisateur n'a pas voté
@@ -83,16 +83,24 @@ class QuestionModel extends Database {
   function comment() {
     $sondage_id=$_GET['sondage'];
 //function permettant de recup et afficher les commentaire et les info lié
-    $commentaire =$this->query("SELECT u.`pseudo`, uc.`comment`, uc.`date` FROM user_comment as uc INNER JOIN user as u on uc.`user_id` = u.`id` WHERE id_question_id = '$sondage_id'");
+    $commentaire =$this->query("SELECT u.`pseudo`, uc.`comment`, uc.`date`, uc.`user_id`, uc.`id`  FROM user_comment as uc INNER JOIN user as u on uc.`user_id` = u.`id` WHERE id_question_id = '$sondage_id'");
     if(isset($_POST['sendcom'])) {
       if(!empty($_POST['commentaire'])) {
         $iduser=$_SESSION['user']['id'];
         $mess=$_POST['commentaire'];
         $enregistrementCom=$this->pdo->prepare("INSERT INTO user_comment (`user_id`, id_question_id, comment) VALUES ('$iduser', '$sondage_id', '$mess')");
         $enregistrementCom->execute();
-      }else {
-  
       }
+    }
+    if(isset($_GET['com'])){
+      $idComHash = $_GET['com'];
+      $idCom = 0;
+      while(password_verify($idCom, $idComHash) == false){
+        $idCom++;  
+      }
+      $comSupp=$this->pdo->prepare("DELETE from user_comment where id='$idCom'");
+      $comSupp->execute();
+      header('location:index.php?page=question&sondage='.$sondage_id);
     }
     return $commentaire;
   }

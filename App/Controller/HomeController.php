@@ -14,7 +14,12 @@ class HomeController{
         if(!isset($_SESSION['connect'])){
             $_SESSION['connect'] = false;
         }
-        $this->model->home();
+        if($_SESSION['connect']){
+            $this->model->statut();
+        }else{
+            $this->model->home();
+        } 
         require ROOT."/App/View/homeView.php";
     }
+    
 }

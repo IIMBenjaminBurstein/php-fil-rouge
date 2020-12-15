@@ -13,5 +13,7 @@
     height: 75.7vh;
     z-index: -1 !important;
     position: static;
-
+}
+body.sign{
+    display: block;
 }

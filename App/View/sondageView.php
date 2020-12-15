@@ -17,8 +17,14 @@ include '../inc/header.inc.php'; ?>
             foreach($sond as $sondage) :
            ?>
            <!-- Affichage des sondages -->
-            <div class="boxsondage">
-                <a href="index.php?page=question&sondage=<?=$sondage->question_id?>">
+           <!-- Si l'utilisateur n'es pas connecté un onclick est présent sur la div pour lui dire de se connecter -->
+            <div class="boxsondage" <?php if(!$_SESSION['connect']){
+                      ?> 
+                       onclick="alert('Veuillez-vous connecter pour pouvoir voir la question'), window.location.href='index.php?page=sign'"
+                       <?php } ?>>
+                <?php if($_SESSION['connect']){
+                  ?><a href="index.php?page=question&sondage=<?=$sondage->question_id?>">
+                  <?php }?>
                     <img src="<?= $sondage->image ?>" alt="Image de la question ' + <?= $sondage->question ?> + '">
                     <span>Posté par : <?= $sondage->pseudo ?> <br> Date de fin : <?= $sondage->date_fin ?></span>
                     <p><?= $sondage->question ?></p>
@@ -55,6 +61,9 @@ include '../inc/header.inc.php'; ?>
                     <p><?= $sondagePerso->question ?></p>
                 </a>
                 <br>
+                <?php   $sondHash = password_hash($sondagePerso->question_id, PASSWORD_DEFAULT); ?>
+                <button  onclick="window.location.href='index.php?page=sondage&sondage=<?= $sondHash ?>'"
+                class="rouge btn btn-lg btn-block" name="sondageDel">Supprimer mon sondage</button>
             </div>
             <?php endforeach;?>
         </div>

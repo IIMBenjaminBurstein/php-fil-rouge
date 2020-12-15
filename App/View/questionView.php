@@ -151,6 +151,15 @@ list ($temps, $past) = TimeToFin($dateFin);
                     <img src="https://www.tbstat.com/wp/uploads/2019/07/20190724_Blockchain-Gaming.jpg">
                     <p><?= $com->pseudo ?></p>
                     <p><?= $com->date ?></p>
+                    <?php 
+                    $comHash = password_hash($com->id, PASSWORD_DEFAULT);
+                    if($com->user_id == $_SESSION['user']['id']){?>  
+                       <button class="comSupp" name="suppCom">
+                        <a href="index.php?page=question&sondage=<?=$sondage[0]->question_id?>&com=<?=$comHash?>"> 
+                                <p>Supprimer mon message</p>
+                        </a>
+                       </button> 
+                   <?php  } ?>
                 </div>
                 <div>
                     <p><?= $com->comment ?></p>

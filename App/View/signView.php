@@ -1,5 +1,8 @@
 <?php 
 include '../inc/head.inc.php'; 
+?>
+<body class="sign">
+<?php
 include '../inc/header.inc.php';
 ?>
 
@@ -13,7 +16,7 @@ include '../inc/header.inc.php';
                 <div class="card-body">
                     <h2 class="card-title">Inscription</h2>
                     <form class="row " method="post">
-                        <div class="col-sm-6">
+                        <div class="col-sm-6 position-static" >
                             <label for="nom">Nom</label>
                             <input type="text" name="nom" class="form-control" placeholder="Entrez votre nom"
                                 required="required" data-error="Le nom est requis.">

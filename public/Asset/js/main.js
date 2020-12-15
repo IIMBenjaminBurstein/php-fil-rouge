@@ -1,18 +1,12 @@
 //Menu burger
 $('.fa-bars').click(function () { //Ouvre le menu en appuyant sur les traits
     $('nav').show("slow");
-    $('main').css('display', 'none');
 });
 
 $('nav i').click(function () { //Appuie sur la croix
     $('nav').hide("slow");
-    $('main').css('display', 'block');
 });
 
-$('nav a').click(function () { //Appuie sur le menu
-    $('nav').hide("slow");
-    $('main').css('display', 'block');
-});
 
 
 //Bouton ajout commentaire

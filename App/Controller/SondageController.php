@@ -15,12 +15,12 @@ class SondageController{
             $_SESSION['connect'] = false;
         }
         //s'il est connecté on lui demande les methodes 
-        if($_SESSION['connect'] == true){
-            $requete = $this->model->homeConnect();
-           $this->model->statut(); 
+        if($_SESSION['connect']){
+            $requete = $this->model->sondage();
+            $this->model->sondageDel();
         }else{
-            //sinon on lui demande une autre métho
-            $allSondage = $this->model->home();
+            //sinon on lui demande une autre méthode
+            $allSondage = $this->model->sondageDeco();
         }     
         //on require la vue    
         require ROOT."/App/View/SondageView.php";
